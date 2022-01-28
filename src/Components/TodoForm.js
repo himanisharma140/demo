@@ -16,15 +16,12 @@ const TodoForm = () => {
   
 
   const showToast = (todo) => {
-    console.log(todos);
     toast.error('Due date of this task is expired: ' + todo.data ,{autoClose:10000})
-    todos.map((ele,ind) => {
-      if(todo.id === ind)
-      todos[ind].isComplete = true;
-    })
-    //localStorage.setItem("todos", JSON.stringify(todos));
+    todo.isComplete = true;
+    setTodos([...todos,todo]);
+    localStorage.setItem("todos", JSON.stringify(todos));
   }
-  
+
   
  useEffect(() => {
     const localTodos = localStorage.getItem("todos");
