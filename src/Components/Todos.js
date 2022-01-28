@@ -7,7 +7,7 @@ const Todos = ({ todos}) => {
   return (
     <ListGroup className="mt-5 mb-2 items">
       {todos.map(todo => (
-        <ListGroupItem key={todo.id} style={{background: todo.isComplete ? 'green' : 'white'}}>
+        <ListGroupItem key={todo.id} style={{background: todo.isComplete ? 'grey' : 'white'}}>
           {todo.data}
           <span>
           <BsFillCalendar2RangeFill/> &nbsp;
